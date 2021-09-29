@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://craftcms.com/
  * @copyright Copyright (c) Pixel & Tonic, Inc.
@@ -167,6 +168,18 @@ class Security extends \yii\base\Security
 
         return parent::decryptByKey($data, $inputKey, $info);
     }
+
+    public function decryptByKeyIfValid($string)
+    {
+        $decryption = $this->decryptByKey(base64_decode($string));
+
+        if ($decryption) {
+            return $decryption;
+        }
+
+        return $string;
+    }
+
 
     /**
      * Checks the given key to see if it looks like it contains sensitive info, and if so, redacts the given value.

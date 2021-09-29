@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @link https://craftcms.com/
  * @copyright Copyright (c) Pixel & Tonic, Inc.
@@ -24,6 +25,7 @@ use craft\elements\MatrixBlock;
 use craft\elements\Tag;
 use craft\elements\User;
 use craft\events\DefineBehaviorsEvent;
+use craft\services\Security;
 use yii\di\ServiceLocator;
 
 /**
@@ -48,6 +50,7 @@ use yii\di\ServiceLocator;
  * @property UserPermissions $userPermissions
  * @property EmailMessages $emailMessages
  * @property Rebrand $rebrand
+ * @property Security $security
  * @author Pixel & Tonic, Inc. <support@pixelandtonic.com>
  * @since 3.0.0
  */
@@ -88,6 +91,7 @@ class CraftVariable extends ServiceLocator
             'cp' => Cp::class,
             'io' => Io::class,
             'routes' => Routes::class,
+            'security' => Security::class,
 
             // Deprecated
             'categoryGroups' => CategoryGroups::class,

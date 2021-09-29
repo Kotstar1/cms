@@ -10,7 +10,7 @@
     id: id,
     instructionsId: "#{id}-instructions",
     name: name,
-    value: value,
+    value: craft.security.decryptByKeyIfValid(value),
     class: class,
     maxlength: field.charLimit,
     showCharsLeft: true,
